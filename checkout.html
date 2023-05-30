@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>checkout</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+
+<section class="heading">
+    <h3>Checkout Order</h3>
+    <p> <a href="home.php">Home</a> / Checkout </p>
+</section>
+
+<section class="display-order">
+    <div class="grand-total">Total: </div>
+</section>
+
+<section class="checkout">
+
+    <form action="" method="POST">
+
+        <h3>place your order</h3>
+
+        <div class="flex">
+            <div class="inputBox">
+                <span>Your name :</span>
+                <input type="text" name="name" required placeholder="Enter your name: ">
+            </div>
+            <div class="inputBox">
+                <span>Your number :</span>
+                <input type="number" name="number" required min="0" placeholder="Enter your number: ">
+            </div>
+            <div class="inputBox">
+                <span>Your email :</span>
+                <input type="email" name="email" required placeholder="Enter your email: ">
+            </div>
+            <div class="inputBox">
+                <span>Payment method :</span>
+                <select name="method">
+                    <option value="cash on delivery">Cash </option>
+                    <option value="credit card">Credit card</option>
+                    <option value="paypal">Paypal</option>
+                    <option value="paytm">Paytm</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>Apartament number :</span>
+                <input type="text" name="flat" required placeholder="Apartament number">
+            </div>
+            <div class="inputBox">
+                <span>Street name :</span>
+                <input type="text" name="street" required placeholder="Street name">
+            </div>
+            <div class="inputBox">
+                <span>City :</span>
+                <input type="text" name="city" required placeholder="City">
+            </div>
+            <div class="inputBox">
+                <span>State :</span>
+                <input type="text" name="state" required placeholder="State">
+            </div>
+            <div class="inputBox">
+                <span>Country :</span>
+                <input type="text" name="country" required placeholder="Country">
+            </div>
+            <div class="inputBox">
+                <span>ZIP code :</span>
+                <input type="number" min="0" required name="pin_code" placeholder="ZIP code">
+            </div>
+        </div>
+
+        <input type="submit" name="order" value="order now" class="btn">
+
+    </form>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

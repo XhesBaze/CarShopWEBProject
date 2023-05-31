@@ -8,16 +8,16 @@
 
 //first box will have sections of our website that you can see
         <div class="box">
-            <h3>Navigate to</h3>
+            <h3>Navigate to: </h3>
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="contact.php">Contact</a>
             <a href="shop.php">Shop</a>
         </div>
 
-//secod box will have linksthat are specified more for the user
+//secod box will have links that are specified more for the user
         <div class="box">
-            <h3>Extra links</h3>
+            <h3>Extra links: </h3>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
             <a href="orders.php">My Orders</a>

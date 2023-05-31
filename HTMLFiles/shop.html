@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="heading">
+      <h3>Our shop</h3>
+      <p><a href="home.php">Home</a> / Shop</p>
+    </section>
+
+    <section class="products">
+      <h1 class="title">Latest products</h1>
+
+      <div class="box-container">
+        <form action="" method="POST" class="box">
+          <a class="fas fa-eye"></a>
+          <div class="price"></div>
+          <img src="/uploaded_img" alt="" class="image" />
+          <div class="name"></div>
+          <input
+            type="number"
+            name="product_quantity"
+            value="1"
+            min="0"
+            class="qty"
+          />
+          <input type="hidden" name="product_id" value="" />
+          <input type="hidden" name="product_name" value="" />
+          <input type="hidden" name="product_price" value="" />
+          <input type="hidden" name="product_image" value="" />
+          <input
+            type="submit"
+            value="add to wishlist"
+            name="add_to_wishlist"
+            class="option-btn"
+          />
+          <input
+            type="submit"
+            value="add to cart"
+            name="add_to_cart"
+            class="btn"
+          />
+        </form>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

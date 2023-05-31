@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shopping cart</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="heading">
+      <h3>Shopping cart</h3>
+      <p><a href="home.php">Home</a> / Cart</p>
+    </section>
+
+    <section class="shopping-cart">
+      <h1 class="title">Products added</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <a
+            class="fas fa-times"
+            onclick="return confirm('delete this from cart?');"
+          ></a>
+          <a class="fas fa-eye"></a>
+          <img src="/uploaded_img" alt="" class="image" />
+          <div class="name"></div>
+          <div class="price"></div>
+          <form action="" method="post">
+            <input type="hidden" name="cart_id" />
+            <input type="number" min="1" name="cart_quantity" class="qty" />
+            <input
+              type="submit"
+              value="update"
+              class="option-btn"
+              name="update_quantity"
+            />
+          </form>
+          <div class="sub-total">Sub-total : <span> </span></div>
+          <!--To be added-->
+        </div>
+      </div>
+
+      <div class="more-btn">
+        <a class="delete-btn" onclick="return confirm('delete all from cart?');"
+          >Delete all</a
+        >
+      </div>
+
+      <div class="cart-total">
+        <p>Total : <span> </span></p>
+        <!--To be added-->
+        <a href="shop.php" class="option-btn">Continue shopping</a>
+        <a href="checkout.php" class="btn">Proceed to checkout</a>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

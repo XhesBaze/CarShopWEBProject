@@ -33,7 +33,11 @@ if (isset($_POST['submit'])) // if the form is submitted
     {
         $message[] = 'User already exists!'; 
     } else {
-        if ($pass1 != $cpass1) { //if passwords don't match
+	if(strlen($pass1) < 8 || strlen($pass1) > 16)
+      {
+         $message[] = 'Password must be between 8-16 characters.';
+      }
+        elseif ($pass1 != $cpass1) { //if passwords don't match
             $message[] = 'Passwords do not match!';
         }
 		else {

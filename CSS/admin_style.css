@@ -1,71 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
-.change-role {
-   text-align: center;
-   margin-top: 50px;
-}
-
-.change-role-heading {
-   font-size: 28px;
-   color: #333;
-   text-align: center;
-   margin-bottom: 20px;
-   text-transform: uppercase;
-   font-weight: bold;
-   letter-spacing: 1px;
-}
-.form-group {
-   margin-bottom: 20px;
-}
-
-label {
-   display: block;
-   font-weight: bold;
-   margin-bottom: 5px;
-       color: #262DAC;
-	   font-size: 20px;
-}
-.role-select {
-   font-size: 16px; 
-   padding: 10px;
-   width: 200px; 
-   border: 1px solid #ccc; 
-   border-radius: 5px; 
-   background-color: #fff; 
-   color: #333; 
-}
-
-
-.role-select::after {
-   content: "\25BC"; 
-   position: absolute;
-   top: 50%;
-   right: 10px;
-   transform: translateY(-50%);
-   pointer-events: none;
-}
-
-
-.role-select option {
-   font-size: 16px; 
-   padding: 10px; 
-}
-
-
-.submit-button {
-   display: inline-block;
-   padding: 12px 24px;
-   font-size: 16px;
-   background-color: #4CAF50;
-   color: #fff;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-   background-color: #45a049;
-}
 
 :root{
    --blue:#262DAC ;
@@ -157,7 +90,7 @@ section{
 	
 }
 	
-
+/*flex box elements*/
 .message{
    position: sticky;
    top:0;
@@ -225,7 +158,7 @@ section{
    background-color: var(--white);
    box-shadow: var(--box-shadow);
 }
-
+/*flex box elements*/
 .header .flex{
    display: flex;
    align-items: center;
@@ -380,7 +313,7 @@ section{
    height: 15rem;
    resize: none;
 }
-
+/*flex box elements*/
 .show-products .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 30rem);
@@ -468,7 +401,7 @@ section{
    border:var(--border);
    border-radius: .5rem;
 }
-
+/*flex box elements*/
 .placed-orders .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
@@ -512,7 +445,7 @@ section{
    border-radius: .5rem;
    margin:.5rem 0;
 }
-
+/*flex box elements*/
 .users .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
@@ -546,7 +479,7 @@ section{
 .users .box-container .box .delete-btn{
    margin-top: .5;
 }
-
+/*flex box elements*/
 .messages .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 33rem);
@@ -576,50 +509,60 @@ section{
    color:var(--blue);
 }
 
-/* media  */
-
-@media (max-width:991px){
-
-   html{
-      font-size: 55%;
-   }
-
+.change-role {
+   text-align: center;
+   margin-top: 50px;
 }
 
-@media (max-width:768px){
-
-   #menu-btn{
-      display: inline-block;
-   }
-
-   .header .flex .navbar{
-      position: absolute;
-      top:99%; left:0; right:0;
-      background-color: var(--white);
-      border-top: var(--border);
-      border-bottom: var(--border);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-   }
-
-   .header .flex .navbar.active{
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-   }
-
-   .header .flex .navbar a{
-      margin:2rem;
-      display: block;
-   }
-
+.change-role-heading {
+   font-size: 28px;
+   color: #333;
+   text-align: center;
+   margin-bottom: 20px;
+   text-transform: uppercase;
+   font-weight: bold;
+   letter-spacing: 1px;
+}
+.form-group {
+   margin-bottom: 20px;
 }
 
-@media (max-width:450px){
+label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 5px;
+       color: #262DAC;
+	   font-size: 20px;
+}
+.role-select {
+   font-size: 16px; 
+   padding: 10px;
+   width: 200px; 
+   border: 1px solid #ccc; 
+   border-radius: 5px; 
+   background-color: #fff; 
+   color: #333; 
+}
 
-   html{
-      font-size: 50%;
-   }
 
-   .title{
-      font-size: 3.5rem;
-   }
+.role-select option {
+   font-size: 16px; 
+   padding: 10px; 
+}
 
+
+.submit-button {
+   display: inline-block;
+   padding: 12px 24px;
+   font-size: 16px;
+   background-color: var(--blue);
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+   background-color: var(--light_bue);
 }

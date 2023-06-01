@@ -12,7 +12,7 @@ if(isset($_SESSION['admin_id']) && !empty($_SESSION['admin_id'])){ //if admin id
 }
 if (isset($_POST['submit'])) { //if the form has been submitted
     $email1 = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL); //filtering the email input, performs basic email validation
-    $pass1 = password_hash($_POST['pass'], PASSWORD_DEFAULT); // hashing the password for SECURITY reasons
+     $pass1 = md5($_POST['pass']); // hashing the password for SECURITY reasons (EDITED)
 
     $stmt1 = mysqli_prepare($conn, "SELECT * FROM `users` WHERE email = ? AND password = ?");// retrieve user data from the entity "users"
    

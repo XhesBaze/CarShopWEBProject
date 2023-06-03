@@ -18,7 +18,7 @@ if(isset($_GET['delete'])){
 
 if(isset($_GET['delete_all'])){
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
-    header('location:cart.php);
+    header('location:cart.php');
 };
 
 if(isset($_POST['update_quantity'])){
@@ -95,7 +95,7 @@ if(isset($_POST['update_quantity'])){
     <div class="cart-total">
         <p>grand total : <span>$<?php echo $grand_total; ?>/-</span></p>
         <a href="shop.php" class="option-btn">continue shopping</a>
-        <a href="checkout.php" class="btn" proceed to checkout</a>
+        <a href="checkout.php" class="btn  <?php echo ($grand_total > 1)?'':'disabled' ?>">proceed to checkout</a>
     </div>
 
 </section>

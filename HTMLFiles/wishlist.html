@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Wishlist</title>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<section class="heading">
+    <h3>Your wishlist</h3>
+    <p> <a href=" ">Home</a> / Wishlist </p>
+</section>
+
+<section class="wishlist">
+
+    <h1 class="title">Products added</h1>
+
+    <div class="box-container">
+
+    <form action="" method="POST" class="box">
+        <a href=" " class="fas fa-times" onclick="return confirm('Delete this from wishlist?');"></a>
+        <a href= " " class="fas fa-eye"></a>
+        <img src="uploaded_img "  class="image">
+        <div class="name"> </div>
+        <div class="price"> </div>
+        <input type="hidden" name="product_id" value=" ">
+        <input type="hidden" name="product_name" value=" ">
+        <input type="hidden" name="product_price" value=" ">
+        <input type="hidden" name="product_image" value=" ">
+        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+        
+    </form>
+        </div>
+
+    <div class="wishlist-total">
+        <p>Total : ></p>
+        <a href=" " class="option-btn">Continue shopping</a>
+        <a href=" " class="delete-btn " onclick="return confirm('Delete all from wishlist?');">Delete all.</a>
+    </div>
+
+</section>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -7,11 +7,13 @@ session_start(); //starting a session
 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) // if a user id is set 
 {
    header('location:home.php'); // redirect to home page
+	exit();
 }
 
 if(isset($_SESSION['admin_id']) && !empty($_SESSION['admin_id'])) // if an admin id is set 
 {
    header('location:admin_page.php'); // redirect to admin page
+	exit();
 }
 
 
@@ -20,9 +22,10 @@ if (isset($_POST['submit'])) // if the form is submitted
 	
 	$name1 = $_POST['name']; //store the name submitted in the name1 variable
 	$email1 = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL); //storing the sanitized email in the email1 variable
-	$pass1 = md5($_POST['pass']); // storing the hashed password in the pass1 variable 
+	$pass1 = md5($_POST['pass']);// storing the hashed password in the pass1 variable 
+	$pass2 = $_POST['pass']; //retrieving the not hashed password
 	$cpass1 = md5($_POST['cpass']); // storing the text for the confirmation password in the cpass1 variable
-
+        $pattern = '/^(?=(?:.*\d){2})(?=.*[!@#$%^&*()\-=_+])[^\';"]{8,16}$/'; // pattern for the password
 
   $stmt1 = mysqli_prepare($conn, "SELECT * FROM `users` WHERE email = ?"); //query to select information from the user table, where the email matches the placeholder
     mysqli_stmt_bind_param($stmt1, "s", $email1); // binding the parameters, a type string will be bounded,email,to its placeholder
@@ -33,12 +36,10 @@ if (isset($_POST['submit'])) // if the form is submitted
     {
         $message[] = 'User already exists!'; 
     } else {
-	if(strlen($pass1) < 8 || strlen($pass1) > 16)
-      {
-         $message[] = 'Password must be between 8-16 characters.';
-      }
-        elseif ($pass1 != $cpass1) { //if passwords don't match
+	if ($pass1 != $cpass1) {
             $message[] = 'Passwords do not match!';
+        } else if (!preg_match($pattern, $pass2)) {
+            $message[] = "Password must be 8-16 characters, including 2 numeric values, and 1 symbol (excluding ';' and '\")";
         }
 		else {
             $stmt1 = mysqli_prepare($conn, "INSERT INTO `users` (name, email, password) VALUES (?, ?, ?)"); // preparing an INSERT query, three placeholders for name,email,password

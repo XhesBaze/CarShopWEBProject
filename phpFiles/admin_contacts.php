@@ -1,6 +1,6 @@
 <?php
 
-//database connection details 
+//database connection details  
 @include 'config.php';
 
 session_start();
@@ -12,7 +12,7 @@ if(!isset($admin_id)){
    header('location:login.php');
 };
 
-//if delete is set we retrieve the delete id and executes the sql query
+//if delete is set we retrieve the delete id and then it executes the sql query
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
    //this makes sure we delete the corresponding message 
@@ -56,9 +56,10 @@ if(isset($_GET['delete'])){
          <p>Number : <span><?php echo $fetch_message['number']; ?></span> </p>
          <p>Email : <span><?php echo $fetch_message['email']; ?></span> </p>
          <p>Message : <span><?php echo $fetch_message['message']; ?></span> </p>
+          <!--  delete parameter and its corresponding value set as the ID of the message being displayed-->
          <a href="admin_contacts.php?delete=<?php echo $fetch_message['id']; ?>" onclick="return confirm('Delete this message?');" class="delete-btn">Delete</a>
       </div>
-      <!-- if there are no rows there are no messages to display-->
+      <!-- if there are no rows of messages there are no messages to display-->
       <?php
          }
       }else{

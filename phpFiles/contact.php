@@ -1,15 +1,18 @@
 <?php
-
+//connection with the database
 @include 'config.php';
 
 session_start();
 
+//saves in session the user id
 $user_id = $_SESSION['user_id'];
 
+//if id is not set, it redirects to login
 if(!isset($user_id)){
    header('location:login.php');
 };
 
+//if send option is selected, name, email, number and message are saved from the database to session
 if(isset($_POST['send'])){
 
     $name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -17,8 +20,10 @@ if(isset($_POST['send'])){
     $number = mysqli_real_escape_string($conn, $_POST['number']);
     $msg = mysqli_real_escape_string($conn, $_POST['message']);
 
+//it retrieves the message of the user based on his name, email and number
     $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
-
+//if the user has written even one row, it means the message has been sent already
+//otherwise it inserts the meesage
     if(mysqli_num_rows($select_message) > 0){
         $message[] = 'message sent already!';
     }else{
@@ -38,10 +43,8 @@ if(isset($_POST['send'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>contact</title>
 
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -66,11 +69,6 @@ if(isset($_POST['send'])){
     </form>
 
 </section>
-
-
-
-
-
 
 <?php @include 'footer.php'; ?>
 

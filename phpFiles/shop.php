@@ -10,22 +10,24 @@ if(!isset($user_id)){
    header('location:login.php');
 };
 
+//if you want to add something to your wishlist, it retrieves from the form, name, id, price and image
 if(isset($_POST['add_to_wishlist'])){
 
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
-
+//gets the information from the database if the item is in the wishlist
     $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-
+//gets the information from the database if the item is on the cart
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-
+//if even one row is retrieved, it means the item is o your wishlist
     if(mysqli_num_rows($check_wishlist_numbers) > 0){
         $message[] = 'already added to wishlist';
     }elseif(mysqli_num_rows($check_cart_numbers) > 0){
         $message[] = 'already added to cart';
     }else{
+//else it inserts item to wishlist
         mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
         $message[] = 'product added to wishlist';
     }
@@ -41,7 +43,7 @@ if(isset($_POST['add_to_cart'])){
     $product_quantity = $_POST['product_quantity'];
 
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-
+//if the item you want is already on the wishlist and you want to add it to cart, it is deleted from the wishlist first
     if(mysqli_num_rows($check_cart_numbers) > 0){
         $message[] = 'already added to cart';
     }else{
@@ -51,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
         if(mysqli_num_rows($check_wishlist_numbers) > 0){
             mysqli_query($conn, "DELETE FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
         }
-
+//if it is not found on wishlist, it just adds the item to cart
         mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
         $message[] = 'product added to cart';
     }
@@ -68,10 +70,8 @@ if(isset($_POST['add_to_cart'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>shop</title>
 
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -91,6 +91,7 @@ if(isset($_POST['add_to_cart'])){
    <div class="box-container">
 
       <?php
+      //retrieves all products from the database
          $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
@@ -118,11 +119,6 @@ if(isset($_POST['add_to_cart'])){
    </div>
 
 </section>
-
-
-
-
-
 
 <?php @include 'footer.php'; ?>
 

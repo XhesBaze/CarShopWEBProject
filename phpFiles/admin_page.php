@@ -1,11 +1,14 @@
 <?php
 
+//database connection details 
 @include 'config.php';
 
 session_start();
 
+//retrieve the admin id 
 $admin_id = $_SESSION['admin_id'];
 
+//if the admin id is not set we go to the log in page
 if(!isset($admin_id)){
    header('location:login.php');
 };
@@ -27,7 +30,7 @@ if(!isset($admin_id)){
 </head>
 <body>
    
-<?php @include 'admin_header.php'; ?>
+<?php @include 'admin_header.php'; //we include the header?>
 
 <section class="dashboard">
 
@@ -37,20 +40,24 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
+         //it takes the pendings from the database and we add all of their prices together 
             $total_pendings = 0;
             $select_pendings = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'pending'") or die('Query failed');
             while($fetch_pendings = mysqli_fetch_assoc($select_pendings)){
                $total_pendings += $fetch_pendings['total_price'];
             };
          ?>
+         <!--displaying the total pendings -->
          <h3>$<?php echo $total_pendings; ?></h3>
          <p>Pendings</p>
       </div>
 
       <div class="box">
          <?php
+         //selecting rows where the "payment_status" column has a value of "completed" on a table named "orders" in the database
             $total_completes = 0;
             $select_completes = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status = 'completed'") or die('Query failed');
+            //iterates over each row and adds the total price of them
             while($fetch_completes = mysqli_fetch_assoc($select_completes)){
                $total_completes += $fetch_completes['total_price'];
             };
@@ -116,17 +123,6 @@ if(!isset($admin_id)){
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script src="js/admin_script.js"></script>

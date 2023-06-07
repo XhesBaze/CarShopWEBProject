@@ -20,8 +20,10 @@ if(!isset($user_id)){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>orders</title>
 
+   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+   <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -41,8 +43,6 @@ if(!isset($user_id)){
     <div class="box-container">
 
     <?php
-    //selects the information on the order based on the user id 
-    //if at least one row is returned, it means the order has been placed and we retrive every information of the order
         $select_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id = '$user_id'") or die('query failed');
         if(mysqli_num_rows($select_orders) > 0){
             while($fetch_orders = mysqli_fetch_assoc($select_orders)){
@@ -67,6 +67,12 @@ if(!isset($user_id)){
     </div>
 
 </section>
+
+
+
+
+
+
 
 <?php @include 'footer.php'; ?>
 

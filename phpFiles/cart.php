@@ -4,26 +4,35 @@
 
 session_start();
 
+//saves user id in the session
 $user_id = $_SESSION['user_id'];
 
+//if user id is not set, it redirects to login page
 if(!isset($user_id)){
    header('location:login.php');
 };
 
+//if delete option is retrieved from the form, do the following actions
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed');
+ //redirects to cart page
     header('location:cart.php');
 }
 
+//if delete all is selected
 if(isset($_GET['delete_all'])){
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
     header('location:cart.php');
 };
 
+//if update quantity is selected
 if(isset($_POST['update_quantity'])){
+    //it saves the id for the cart it wants to update
     $cart_id = $_POST['cart_id'];
+    //takes the quantity that it is being updated to 
     $cart_quantity = $_POST['cart_quantity'];
+    //creates query and updates cart
     mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
     $message[] = 'cart quantity updated!';
 }
@@ -38,10 +47,8 @@ if(isset($_POST['update_quantity'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>shopping cart</title>
 
-   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   <!-- custom admin css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -61,7 +68,9 @@ if(isset($_POST['update_quantity'])){
     <div class="box-container">
 
     <?php
+    //calculates total price
         $grand_total = 0;
+        //selects everything from cart and if there is anything, it returns them
         $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
         if(mysqli_num_rows($select_cart) > 0){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){
@@ -94,16 +103,13 @@ if(isset($_POST['update_quantity'])){
 
     <div class="cart-total">
         <p>grand total : <span>$<?php echo $grand_total; ?>/-</span></p>
+        <!--continue shopping button-->
         <a href="shop.php" class="option-btn">continue shopping</a>
+        <!--proceed to check out button-->
         <a href="checkout.php" class="btn  <?php echo ($grand_total > 1)?'':'disabled' ?>">proceed to checkout</a>
     </div>
 
 </section>
-
-
-
-
-
 
 <?php @include 'footer.php'; ?>
 

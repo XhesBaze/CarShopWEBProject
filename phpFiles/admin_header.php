@@ -1,9 +1,11 @@
 <?php
+//this shows messages for the user at the webpage if there are any to show
 if(isset($message)){
    foreach($message as $message){
       echo '
       <div class="message">
          <span>'.$message.'</span>
+         //an icon to close the message from fontawesome
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
       ';
@@ -26,10 +28,12 @@ if(isset($message)){
       </nav>
 
       <div class="icons">
+         <!--icons from fontawesome the first for the mobile users the second to show the user info-->
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="user-btn" class="fas fa-user"></div>
       </div>
 
+      <!--account related information-->
       <div class="account-box">
          <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
          <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
@@ -37,8 +41,9 @@ if(isset($message)){
 		 
 		 
 		 <?php
+       //we take the admin id and we save it into session 
 				$adminid = $_SESSION['admin_id'];
-
+            //if the id is not set we are displayed a message that contains the links to login or register
 				if(!isset($adminid)){
 				?>
                       <div>new <a href="login.php">Login</a> | <a href="register.php">Register</a> </div>

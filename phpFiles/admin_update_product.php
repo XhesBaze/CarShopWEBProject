@@ -80,7 +80,7 @@ if(isset($_POST['update_product'])){
 <!--The enctype="multipart/form-data" attribute is included to support file uploads.-->
 <form action="" method="post" enctype="multipart/form-data">
    <!--ode displays the current image of the product -->
-   <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" class="image"  alt="">
+   <img style="width:400px; height:250px;border:0cm;"src="uploaded_img/<?php echo $fetch_products['image']; ?>" class="image"  alt="">
    <input type="hidden" value="<?php echo $fetch_products['id']; ?>" name="update_p_id">
    <input type="hidden" value="<?php echo $fetch_products['image']; ?>" name="update_p_image">
    <input type="text" class="box" value="<?php echo $fetch_products['name']; ?>" required placeholder="update product name" name="name">

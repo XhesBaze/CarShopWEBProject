@@ -1,26 +1,35 @@
 <?php
 
+//includes the config.php files , containing the database connection details 
 @include 'config.php';
 
+//starting a session to manage user session data
 session_start();
 
+//retrieves the user id from the session data
 $user_id = $_SESSION['user_id'];
 
+//checking if the user id is not in the set in the session and if not loged in  redirecting to the login.php page
 if(!isset($user_id)){
    header('location:login.php');
 }
 
+//checking if the form with the name "add_to_wishlist" has been submitted.
 if(isset($_POST['add_to_wishlist'])){
 
+   //retrieving product id, name, price and image
    $product_id = $_POST['product_id'];
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
    $product_image = $_POST['product_image'];
    
+   //query selecting records from the wishlist table with the specified product name and user id.
    $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
+   //query selecting records from cart table that mtaches the specific product name and the user id
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
+   
    if(mysqli_num_rows($check_wishlist_numbers) > 0){
        $message[] = 'already added to wishlist';
    }elseif(mysqli_num_rows($check_cart_numbers) > 0){
@@ -97,7 +106,9 @@ div class="content">
    <div class="box-container">
 
       <?php
+      //query that selecting the first 6 rows from the product table
          $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
+      //checking if there are any rows returned by the query and if so then we can access the data by using the fetch _products
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
@@ -144,7 +155,7 @@ div class="content">
 
 
 
-
+//including the content of footer.php file 
 <?php @include 'footer.php'; ?>
 
 <script src="js/script.js"></script>

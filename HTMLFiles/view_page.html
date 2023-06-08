@@ -20,15 +20,21 @@
 
     <h1 class="title">Product Details</h1>
 
-    
+   //setting up a form that will submit data to the same page using the post method.
     <form action="" method="POST">
+       //creating a numeric type field that will serve for capturing the quantity of the products. inital value
+       //equal to 1, minimum allowed value is 0 , class qty assigned for styling purposes.
          <input type="number" name="product_quantity" value="1" min="0" class="qty">
+       //creating a submit button for the form and when clicked it submits the form and send the form data
+       //to the server.
          <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn">
          <input type="submit" value="add to cart" name="add_to_cart" class="btn">
       </form>
 
 
     <div class="more-btn">
+       //creating an anchor element that serves as a link to the home.php file and have assigned the option btn class
+       //for styling purposes.
         <a href="home.php" class="option-btn">Go to Home Page</a>
     </div>
 
@@ -39,7 +45,8 @@
 
 
 
-
+//including an external javascript file in the html document by allowing the browser to execute 
+   //the javascript code contained in that file.
 <script src="js/script.js"></script>
 
 </body>

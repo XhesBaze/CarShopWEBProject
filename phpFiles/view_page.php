@@ -91,6 +91,7 @@ if(isset($_POST['add_to_cart'])){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
     ?>
     <form action="" method="POST">
+       <img style= "width:450px; height:300px; "src="uploaded_img/<?php>
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="image">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>

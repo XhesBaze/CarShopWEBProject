@@ -4,22 +4,33 @@
 
 session_start();
 
+//retrieves the admin id from the session
 $admin_id = $_SESSION['admin_id'];
 
+//redirects to the login page if the admin id is not set
 if(!isset($admin_id)){
    header('location:login.php');
 };
 
+//executes when the form is submitted to update the order status
 if(isset($_POST['update_order'])){
+   //retrieves the order id from the form data
    $order_id = $_POST['order_id'];
+   //the update payment status will be retrieved from the form data
    $update_payment = $_POST['update_payment'];
+   //update the payment status in the database based on the specific  order id 
    mysqli_query($conn, "UPDATE `orders` SET payment_status = '$update_payment' WHERE id = '$order_id'") or die('query failed');
+   //a success message will be stored and displayed later 
    $message[] = 'payment status has been updated!';
 }
 
+//it will be excecuted when the delete link is clicked to delete an order
 if(isset($_GET['delete'])){
+   //retrieves the order id that will be deleted from the query string
    $delete_id = $_GET['delete'];
+   //the order will be deleted from the database based on the specific order id 
    mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'") or die('query failed');
+   //redirecting back to the admin orders page after deleting the order
    header('location:admin_orders.php');
 }
 

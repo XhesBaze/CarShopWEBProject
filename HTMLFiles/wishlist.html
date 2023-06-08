@@ -12,7 +12,9 @@
 </head>
 <body>
 
+   //creating a section element with the class heading 
 <section class="heading">
+   //creating a heading that will serve as a title 
     <h3>Your wishlist</h3>
     <p> <a href=" ">Home</a> / Wishlist </p>
 </section>
@@ -24,6 +26,8 @@
     <div class="box-container">
 
     <form action="" method="POST" class="box">
+       //creating an anchor element that when clicked represents a confirmation dialog box, 
+       //depending on the user's respond.
         <a href=" " class="fas fa-times" onclick="return confirm('Delete this from wishlist?');"></a>
         <a href= " " class="fas fa-eye"></a>
         <img src="uploaded_img "  class="image">
@@ -40,14 +44,18 @@
 
     <div class="wishlist-total">
         <p>Total : ></p>
+       //creating a button with the text continue shopping which is the visible content of the anchor element.
         <a href=" " class="option-btn">Continue shopping</a>
+       //creating an anchor element that represent a button to delete all items from the wishlist
+       //when clicked firstly a confirmation dialog box will be displayed.
         <a href=" " class="delete-btn " onclick="return confirm('Delete all from wishlist?');">Delete all.</a>
     </div>
 
 </section>
 
 
-<script src="js/script.js"></script>
+//including javascript file into html file
+   <script src="js/script.js"></script>
 
 </body>
 </html>

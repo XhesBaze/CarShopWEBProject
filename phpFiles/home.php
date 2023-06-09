@@ -30,27 +30,34 @@ if(isset($_POST['add_to_wishlist'])){
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
    
+  //checking if there is at least one row in the result set (wishlist table)
    if(mysqli_num_rows($check_wishlist_numbers) > 0){
        $message[] = 'already added to wishlist';
+      //checking if there is at least one row in the result set in cart table
    }elseif(mysqli_num_rows($check_cart_numbers) > 0){
        $message[] = 'already added to cart';
    }else{
+      //inseting products into wishlist table with specific user id , product id , name , price and image.
        mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-       $message[] = 'product added to wishlist';
+      //a success mesage will be assigned to message array 
+      $message[] = 'product added to wishlist';
    }
 
 }
 
+//checking if the add to cart has been submitted via the HTTP post method
 if(isset($_POST['add_to_cart'])){
-
+//retrieving product details , id, name, price, image, quantity.
    $product_id = $_POST['product_id'];
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
    $product_image = $_POST['product_image'];
    $product_quantity = $_POST['product_quantity'];
 
+   //selecting from the cart table the product with the specific given name and user id.
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
+   
    if(mysqli_num_rows($check_cart_numbers) > 0){
        $message[] = 'already added to cart';
    }else{

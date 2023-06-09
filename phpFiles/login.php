@@ -57,37 +57,60 @@ if (isset($_POST['submit'])) { //if the form has been submitted
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-
-    <?php //showing errors in the page
+    <?php //showing errors on the page
     if (isset($message)) {
         foreach ($message as $msg) {
             echo '
             <div class="message">
-                <span>'.$msg.'</span>
+                <span>'.htmlspecialchars($msg).'</span>
             </div>
             ';
         }
     }
     ?>
 
-    <section class="form-container">
+    <img class="backg" src="images/backg.png">
+    <div class="container">
+        <div class="images">
+            <img src="images/login.svg">
+        </div>
+        <div class="form-container">
+            <form action="" method="post">
+                <img src="./images/male.svg">
+                <h2>Login now</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Email</h5>
+                        <input class="input" type="email" name="email" required>
+                    </div>
+                </div>
 
-        <form action="" method="post">
-            <h3>Login now</h3>
-            <input type="email" name="email" class="box" placeholder="Enter your email:" required>
-            <input type="password" name="pass" class="box" placeholder="Enter your password:" required>
-            <input type="submit" class="btn" name="submit" value="login now">
-            <p>Don't have an account yet? <a href="register.php">Register now!</a></p>
-        </form>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input class="input" type="password" name="pass" required>
+                    </div>
+                </div>
+                    <a href="#"> Forgot your password?</a>
+                    <input type="submit" name="submit" class="btn" value="Login">
+                    <p>Don't have an account yet? <a href="register.php">Register now!</a></p>
+            </form>
+        </div>
+    </div>
 
-    </section>
-
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 
 </html>

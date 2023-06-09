@@ -10,9 +10,8 @@
  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
- 
-  <link rel="stylesheet" href="css/style.css">
+//importing an external css file named "style.css" located in the "css" directory relative to the html document
+ <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -22,13 +21,16 @@
 
 
 <section class="heading">
-   <h3>search page</h3>
-   <p> <a href="home.php">home</a> / search </p>
+   <h3>Search Page</h3>
+  //creating a paragraph that contains a link labeled home and when clicked navigates to the home.php page
+   <p> <a href="home.php">Home</a> / search </p>
 </section>
 
 
 <section class="search-form">
+  //creating a form on the webpage,and the form will use the post method to submit data.
    <form action="" method="POST">
+     // creating  a text input field with the class "box", a placeholder text of "search products", and the name "search_box".
        <input type="text" class="box" placeholder="search products..." name="search_box">
        <input type="submit" class="btn" value="search" name="search_btn">
    </form>

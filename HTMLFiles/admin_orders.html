@@ -4,12 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Admin-orders</title>
+   //setting the title of the webpage as admin-orders
+   <title>Admin-Orders</title>
 
    
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  
+  //linking external stylesheet such as  costum style admin
    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
@@ -17,8 +18,8 @@
 
 <section class="placed-orders">
 
-   <h1 class="title">placed orders</h1>
-
+   <h1 class="title">Placed Orders</h1>
+//holding individual order boxes 
    <div class="box-container">
 
 
@@ -29,10 +30,12 @@
          <p> Number :  </p>
          <p> Email :  </p>
          <p> Address : </p>
-         <p> Total products : </p>
-         <p> Total price : </p>
-         <p> Payment method : </p>
+         <p> Total Products : </p>
+         <p> Total Price : </p>
+         <p> Payment Method : </p>
+         //creating a form for updating or deleting orders.
          <form action="" method="post">
+            //hidden type input to store the order id 
             <input type="hidden" name="order_id" value="">
             <select name="update_payment">
                <option disabled selected></option>
@@ -40,6 +43,7 @@
                <option value="completed">Completed</option>
             </select>
             <input type="submit" name="update_order" value="update" class="option-btn">
+            //creating a link that when its clicked it will delete the order 
             <a href="admin_orders.php" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
          </form>
       </div>

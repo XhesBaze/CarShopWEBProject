@@ -33,12 +33,14 @@ if(isset($_POST['add_to_wishlist'])){
         $message[] = 'already added to wishlist';
       //determine if a product is found in the cart table 
     }elseif(mysqli_num_rows($check_cart_numbers) > 0){
+      //message already added to cart will be assigned to message array
         $message[] = 'already added to cart';
     }else{
       //if no product is available in the wishlist table we added it by using query with the specific user id,
       //product id, name, price and image
         mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-        $message[] = 'product added to wishlist';
+      //a success message product added to wishlist will be assigned to the message array  
+      $message[] = 'product added to wishlist';
     }
 
 }
@@ -99,6 +101,7 @@ if(isset($_POST['add_to_cart'])){
    //php directive that is used to include the contents of header.php in the current php script
 <?php @include 'header.php'; ?>
 
+   
 <section class="quick-view">
 
     <h1 class="title">product details</h1>
@@ -118,30 +121,38 @@ if(isset($_POST['add_to_cart'])){
             //retrieving a row which we got by the query and which value is assigned to select products 
             while($fetch_products = mysqli_fetch_assoc($select_products)){
     ?>
-    <form action="" method="POST">
+   //creating a form element that will be used to create a form on a web page
+   <form action="" method="POST">
+      //displaying an image on web page with a width set to 450 pixel and height set to 300 pixel
        <img style= "width:450px; height:300px; "src="uploaded_img/<?php>
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="" class="image">
-         <div class="name"><?php echo $fetch_products['name']; ?></div>
+       //using php part fetch_products to retrieve and display the value of the variable name 
+       <div class="name"><?php echo $fetch_products['name']; ?></div>
+       //using php part fetch_products to retrieve and display the value of the variable price
          <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+        //using php part fetch_products to retrieve and display the value of the variable details                  
          <div class="details"><?php echo $fetch_products['details']; ?></div>
          <input type="number" name="product_quantity" value="1" min="0" class="qty">
          <input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
          <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
          <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
+           //retrieving the value of the variable image by fetch_products and attribute is set to hidden                                                                                        
          <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
          <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn">
-         <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+      //creating a button that when clicked triggers the form submission and sends the form data to the server.                                                        
+          <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                                                                                                                                                                                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
       </form>
     <?php
             }
         }else{
-        echo '<p class="empty">no products details available!</p>';
+        echo '<p class="empty">No Products Details Available!</p>';
         }
     }
     ?>
 
     <div class="more-btn">
-                         //link redirecting the user to home.php page 
+         //link redirecting the user to home.php page 
         <a href="home.php" class="option-btn">go to home page</a>
     </div>
 

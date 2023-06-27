@@ -121,7 +121,7 @@ if(isset($_GET['delete'])){
       <div class="box">
          <!--The product's price, image, name, and details are displayed by echoing the corresponding values from the $fetch_products array.-->
          <div class="price">$<?php echo $fetch_products['price']; ?></div>
-         <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" >
+         <img class="image" style = "width:220px;height:160px;"src="uploaded_img/<?php echo $fetch_products['image']; ?>" >
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="details"><?php echo $fetch_products['details']; ?></div>
          <!--provide options for updating and deleting the product-->

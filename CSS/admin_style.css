@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
 
 :root{
-   --blue:#262DAC ;
-   --light_bue:#1F99C1;
+   --dark_red:#b50000 ;
+   --light_red:#f22a2a;
+   --red:#b50000;
    --orange:#CE5F23;
    --black:#333;
    --white:#fff;
    --light-color:#666;
    --light-white:#ccc;
    --light-bg:#f5f5f5;
-   --border:.2rem solid var(--black);
-   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --border: .2rem solid var(--dark_red);
+   --box-shadow: 0 .5rem 1rem rgb(0 0 0 / 42%);
 }
 
 *{
-   font-family: 'Noto Serif', serif;
+   font-family: monospace;
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
    transition:all .2s linear;
-}
+} 
 
 *::selection{
-   background-color: var(--blue);
+   background-color: var(--dark_red);
    color:var(--white);
 }
 
@@ -37,7 +38,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--blue);
+   background-color: var(--dark_red);
 }
 
 html{
@@ -58,9 +59,10 @@ section{
 .title{
    text-align: center;
    margin-bottom: 2rem;
-   color:var(--black);
+   color:var(--light_red);
    text-transform: uppercase;
-   font-size: 4rem;
+   font-size: 5rem;
+   font-style: oblique;
 }
 
 .btn,
@@ -83,7 +85,7 @@ section{
     margin-top: 1rem;
     font-size: 1.8rem;
     color: var(--white);
-    background: #666666;
+    background: var(--orange);
     cursor: pointer;
     padding: 1rem 3rem;
     text-transform: capitalize;
@@ -112,7 +114,7 @@ section{
 
 .message i{
    font-size: 2.5rem;
-   color:var(--light_bue);
+   color:var(--red);
    cursor: pointer;
 }
 
@@ -123,7 +125,7 @@ section{
 .empty{
    padding:1.5rem;
    font-size: 2rem;
-   color:var(--light_bue);
+   color:var(--light_red);
    border:var(--border);
    box-shadow: var(--box-shadow);
    text-align: center;
@@ -133,11 +135,11 @@ section{
 }
 
 .btn{
-   background-color: var(--blue);
+   background-color: var(--dark_red);
 }
 
 .delete-btn{
-   background-color: var(--light_bue);
+   background-color: var(--red);
 }
 
 .option-btn{
@@ -146,8 +148,12 @@ section{
 
 .btn:hover,
 .delete-btn:hover,
-.option-btn:hover{
-   background-color: var(--black);
+.option-btn:hover,
+.change-role-btn:hover{
+   background-color: var(--white);
+   color: var(--dark_red);
+   border:.2rem solid var(--dark_red);
+   
 }
 
 
@@ -172,7 +178,7 @@ section{
 .header .flex .account-box{
    position: absolute;
    top:120%; right:2rem;
-   width: 33rem;
+   width: 40rem;
    border-radius: .5rem;
    box-shadow: var(--box-shadow);
    background-color: var(--white);
@@ -195,7 +201,7 @@ section{
 }
 
 .header .flex .account-box p span{
-   color:var(--blue);
+   color:var(--dark_red);
 }
 
 .header .flex .account-box div{
@@ -220,18 +226,20 @@ section{
 }
 
 .header .flex .icons div:hover{
-   color:var(--blue);
+   color:var(--red);
 }
 
 .header .flex .navbar a{
    margin:0 1rem;
    font-size: 2rem;
    color:var(--light-color);
+   font-style: italic;
+   font-family: serif;
 }
 
 .header .flex .navbar a:hover{
    text-decoration: underline;
-   color:var(--blue);
+   color:var(--red);
 }
 
 .header .flex .logo{
@@ -240,7 +248,8 @@ section{
 }
 
 .header .flex .logo span{
-   color:var(--blue);
+   color:var(--red);
+   font-style: italic;
 }
 
 #menu-btn{
@@ -249,7 +258,7 @@ section{
 
 .dashboard .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(40rem, 2fr));
    gap:1.5rem;
    align-items: flex-start;
    max-width: 1200px;
@@ -257,29 +266,54 @@ section{
 }
 
 .dashboard .box-container .box{
-   text-align: center;
    border:var(--border);
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    padding:2rem;
-   border-radius: .5rem;
+   border-radius: 4rem;
 }
 
 .dashboard .box-container .box h3{
-   font-size: 4.5rem;
+   font-size: 4rem;
    color:var(--black);
 }
 
 .dashboard .box-container .box p{
    padding:1.5rem;
-   border-radius: .5rem;
-   background-color: var(--light-bg);
-   color:var(--light-color);
+   border-radius: 3rem;
+   background-color: #ecb1b1;
+   color:var(--dark_red);
    border:var(--border);
    margin-top: 2rem;
    font-size: 2rem;
 }
+/* section.add-products {
+   background: linear-gradient(115deg, #e45656 10%, #ea01d600 90%);
+} */
 
+
+.add-products .image-form{
+   display: grid;
+    grid-template-columns: repeat(auto-fit, 60rem);
+    gap: 1.5rem;
+    justify-content: center;
+}
+.add-products .image-form .image{
+   padding: 2rem;
+    position: relative;
+    min-height: -webkit-fill-available;
+}
+.add-products .image-form .form{
+   padding: 2rem;
+    position: relative;
+    min-height: -webkit-fill-available;
+}
+
+.product-image {
+   width: 500px;
+   margin-left: 20px;
+   margin-top: 60px;
+}
 .add-products form{
    max-width: 50rem;
    border-radius: .5rem;
@@ -292,27 +326,31 @@ section{
 }
 
 .add-products form h3{
-   font-size: 2.5rem;
-   text-transform: uppercase;
-   color:var(--black);
-   margin-bottom: 1rem;
+   font-size: 3rem;
+    text-transform: capitalize;
+    color: var(--dark_red);
+    margin-bottom: 1rem;
+    font-family: ui-rounded;
+    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
 }
 
 .add-products form .box{
    width: 100%;
    margin:1rem 0;
-   font-size: 1.8rem;
    color:var(--black);
-   border-radius: .5rem;
-   background-color: var(--light-bg);
+   background-color: #e53a3a29;
    padding:1.2rem 1.4rem;
-   border:var(--border);
+   border-radius: 23px;
 }
+
 
 .add-products form textarea{
    height: 15rem;
    resize: none;
 }
+/* section.show-products {
+   background: linear-gradient(115deg, #e45656 10%, #ea01d600 90%);
+} */
 /*flex box elements*/
 .show-products .box-container{
    display: grid;
@@ -332,6 +370,7 @@ section{
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
    position: relative;
+   min-height: -webkit-fill-available;
 }
 
 .show-products .box-container .box .image{
@@ -363,7 +402,7 @@ section{
 }
 
 .update-product form{
-   max-width: 50rem;
+   max-width: 60rem;
    border-radius: .5rem;
    background-color: var(--white);
    border:var(--border);
@@ -404,7 +443,7 @@ section{
 /*flex box elements*/
 .placed-orders .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 50rem);
    gap:1.5rem;
    align-items: flex-start;
    max-width: 1200px;
@@ -423,11 +462,11 @@ section{
 .placed-orders .box-container .box p{
    margin-bottom: 1rem;
    font-size: 2rem;
-   color:var(--light-color);
+   color:var(--dark_red);
 }
 
 .placed-orders .box-container .box p span{
-   color:var(--blue);
+   color:var(--light-color);
 }
 
 .placed-orders .box-container .box form{
@@ -448,7 +487,7 @@ section{
 /*flex box elements*/
 .users .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(2, 40rem);
    gap:1.5rem;
    align-items: flex-start;
    max-width: 1200px;
@@ -463,17 +502,18 @@ section{
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
    text-align: center;
+   min-height: -webkit-fill-available;
 }
 
 .users .box-container .box p{
    font-size: 2rem;
-   color:var(--light-color);
+   color:var(--dark_red);
    margin-bottom: 1rem;
    line-height: 1.5;
 }
 
 .users .box-container .box p span{
-   color:var(--blue);
+   color:var(--light-color);
 }
 
 .users .box-container .box .delete-btn{
@@ -482,7 +522,7 @@ section{
 /*flex box elements*/
 .messages .box-container{
    display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
+   grid-template-columns: repeat(auto-fit, 40rem);
    gap:1.5rem;
    align-items: flex-start;
    max-width: 1200px;
@@ -496,17 +536,18 @@ section{
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
+   min-height: -webkit-fill-available;
 }
 
 .messages .box-container .box p{
    font-size: 2rem;
-   color:var(--light-color);
+   color:var(--dark_red);
    margin-bottom: 1rem;
    line-height: 1.5;
 }
 
 .messages .box-container .box p span{
-   color:var(--blue);
+   color:var(--light-color);
 }
 
 .change-role {
@@ -516,7 +557,7 @@ section{
 
 .change-role-heading {
    font-size: 28px;
-   color: #333;
+   color: var(--light_red);
    text-align: center;
    margin-bottom: 20px;
    text-transform: uppercase;

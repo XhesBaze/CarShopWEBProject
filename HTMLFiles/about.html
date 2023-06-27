@@ -10,13 +10,17 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 <body>
-
+   
+<?php @include 'header.php';  //including header at the top of the website ?> 
 
 <section class="heading">
     <h3>About Us</h3>
-    <p> <a href="home.php">Home</a> / About us </p>
 </section>
 
 <section class="about">
@@ -36,7 +40,6 @@
              and budget. With an extensive selection of top-quality vehicles, you'll have no trouble finding the ride of your dreams.
               Experience a seamless and transparent buying process that puts your satisfaction first. Choose us and elevate your 
               car-buying experience to new heights.</p>
-            <a href="shop.php" class="btn">Shop now!</a>
         </div>
 
     </div>
@@ -52,7 +55,6 @@
                so you can have peace of mind with your purchase. Additionally, our car shop offers reliable maintenance and repair 
                services, ensuring your vehicle stays in optimal condition for years to come. Trust us to provide a one-stop solution 
                for all your automotive requirements.</p>
-            <a href="contact.php" class="btn">Contact us!</a>
         </div>
 
         <div class="image">
@@ -76,119 +78,288 @@
                 repair services, or simply looking for expert advice, we are here to provide you with the highest level of expertise
                  and personalized attention. Choose us and experience the difference of working with a team that truly cares about 
                  your automotive needs.</p>
-            <a href="#reviews" class="btn">Reviews</a>
         </div>
 
     </div>
 
 </section>
 
-<section class="reviews" id="reviews">
+<section class="carosel_review">
 
-    <h1 class="title">Clients' reviews</h1>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
 
-    <div class="box-container">
+          <div class="swiper-slide">
 
-        <div class="box">
-            <img src="images/pic-1.jpg" alt="">
-            <p>I had an incredible experience at this car shop! The staff was friendly, knowledgeable, and went above and beyond to
-                 find the perfect car for me. The buying process was smooth, and they provided excellent customer service throughout.
-                  I highly recommend them for their professionalism and their top-quality vehicles.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                  I had an incredible experience at this car shop! The staff was friendly, knowledgeable, and went above and beyond to
+                  find the perfect car for me. The buying process was smooth, and they provided excellent customer service throughout.
+                   I highly recommend them for their professionalism and their top-quality vehicles.
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-1.jpg" alt="">
+                  </div>
+                  <h3>
+                    Client X <br>
+                    <span>
+                      CEO
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client X</h3>
-        </div>
+          </div>
 
-        <div class="box">
-            <img src="images/pic-2.jpg" alt="">
-            <p>I recently purchased a car from this shop, and I couldn't be happier with my decision. The team was attentive and 
-                patient, understanding my specific requirements and helping me make an informed choice. The selection of vehicles 
-                was impressive, and the pricing was fair. The entire process was seamless, making it a stress-free experience. I 
-                highly recommend them for their exceptional service and high-quality cars.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+
+
+          <div class="swiper-slide">
+            <div class="testimonialBox">
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                  I recently purchased a car from this shop, and I couldn't be happier with my decision. The team was attentive and 
+                  patient, understanding my specific requirements and helping me make an informed choice. I 
+                  highly recommend them for their exceptional service and high-quality cars.
+                </p>
+                
+                  <i class="fa-solid fa-quote-right"></i>
+               
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-2.jpg" alt="">
+                  </div>
+                  <h3>
+                    Client Y <br>
+                    <span>
+                      CFO
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client Y</h3>
-        </div>
+          </div>
 
-        <div class="box">
-            <img src="images/pic-3.jpg" alt="">
-            <p>From the moment I stepped in, I was greeted warmly and treated with utmost professionalism. The 
-                team listened to my preferences and guided me to the perfect vehicle that matched my needs and budget. 
+
+
+          <div class="swiper-slide">
+
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                  From the moment I stepped in, I was greeted warmly and treated with utmost professionalism. 
                 The entire transaction was transparent, and they even assisted me with financing options. I'm thrilled with
-                 my new car and grateful for their outstanding service!</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+                 my new car and grateful for their outstanding service!
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-3.jpg" alt="">
+                  </div>
+                  <h3>
+                    Client Z <br>
+                    <span>
+                      CTO
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client Z</h3>
-        </div>
+          </div>
+          <div class="swiper-slide">
 
-        <div class="box">
-            <img src="images/pic-4.webp" alt="">
-            <p>I had an excellent experience at this car shop. The team was knowledgeable and took the time to understand 
-                my preferences. They provided me with several options that were within my budget, and I found the perfect car. 
-                The buying process was smooth, and they even assisted me with the paperwork. Overall, it was a great experience, 
-                and I highly recommend them for their exceptional service.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                If you're looking for a reliable car shop, look no further! I had a fantastic experience at this place. 
+                The staff was professional and attentive, providing excellent customer service. I'm extremely satisfied with my purchase 
+                and the overall service provided.
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-4.webp" alt="">
+                  </div>
+                  <h3>
+                    Client Y <br>
+                    <span>
+                      Product Manager
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client D</h3>
-        </div>
+          </div>
+          <div class="swiper-slide">
 
-        <div class="box">
-            <img src="images/pic-5.jpg" alt="">
-            <p>I recently visited this car shop and was thoroughly impressed by their commitment to customer satisfaction. 
-                The staff was incredibly helpful and friendly, providing me with all the information I needed to make an informed 
-                decision. The selection of vehicles was extensive, and the prices were competitive. They made the entire process 
-                easy and enjoyable. I highly recommend this place for anyone looking to purchase a high-quality vehicle.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                I had been searching for a trustworthy car shop, and I finally found one with this place. The staff was honest and transparent, 
+                ensuring that I made an informed decision. They had a good range of pre-owned cars in excellent condition, and the prices were
+                reasonable.The paperwork was handled efficiently.
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-5.jpg" alt="">
+                  </div>
+                  <h3>
+                    Client H <br>
+                    <span>
+                      Software Engineer
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client E</h3>
-        </div>
+          </div>
+          <div class="swiper-slide">
 
-        <div class="box">
-            <img src="images/pic-6.jpg" alt="">
-            <p>I had a fantastic experience purchasing my new car from this car shop. The team was attentive and genuinely cared 
-                about finding the right vehicle for me. They provided expert guidance and made the entire process stress-free. 
-                The quality of their cars is exceptional, and the prices are competitive. I appreciate their commitment to customer 
-                satisfaction and highly recommend them for their outstanding service and top-notch inventory.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                This car shop exceeded my expectations. The staff was friendly, the car selection was impressive, and the
+                 buying process was smooth. I found a great vehicle at a competitive price. The only minor drawback was the limited parking space.
+                  Overall, a fantastic car shop worth visiting.
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-6.jpg" alt="">
+                  </div>
+                  <h3>
+                    Client O <br>
+                    <span>
+                      Graphic Designer
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
             </div>
-            <h3>Client S</h3>
+          </div>
+          <div class="swiper-slide">
+
+            <div class="testimonialBox">          
+
+              <div class="content">
+                <i class="fa-solid fa-quote-left"></i>
+                <p class="content-p">
+                I recently visited this car shop and was thoroughly impressed with their service. 
+                The staff was knowledgeable, friendly, and eager to assist. They had a wide selection of 
+                cars to choose from, and their prices were competitive. 
+                </p>
+                  <i class="fa-solid fa-quote-right"></i>
+
+                <div class="details">
+
+                  <div class="imgBx">
+                    <img src="./images/pic-4.webp" alt="">
+                  </div>
+                  <h3>
+                    Client G <br>
+                    <span>
+                      Lawyer
+                    </span>
+                  </h3>
+
+                </div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
+    
+      </div>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    </div>
+  </section>
 
-</section>
+
 
 <script src="js/script.js"></script>
 
 </body>
-</html>
+</html

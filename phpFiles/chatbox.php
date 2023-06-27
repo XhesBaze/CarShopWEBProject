@@ -6,6 +6,7 @@
 	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	<?php echo '<link rel="stylesheet" href="../css/chat.css">'; ?>
 	<title>Chat-box</title>
+	<link rel="icon" type="image/png" href="..\images\car-logo.jpg"/>
 </head>
 <body>
 

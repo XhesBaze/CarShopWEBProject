@@ -25,6 +25,104 @@ if(!isset($user_id)){
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <style>
+
+.carosel_review {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: blur(4px);
+  background: #e6f2f7;
+  border-radius: 10px;
+}
+.swiper-slide-active {
+  filter: blur(0px);
+}
+
+.testimonialBox {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  padding-top: 90px;
+  color: #686868;
+}
+.testimonialBox .fa-quote-right {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+}
+.testimonialBox .fa-quote-left {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.content-p {
+  position: absolute;
+  top: 35px;
+  justify-content: center;
+  font-size: 1rem;
+}
+.testimonialBox .details {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.testimonialBox .details .imgBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.testimonialBox .details .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonialBox .details h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #2196f3;
+  line-height: 1.1em;
+}
+.testimonialBox .details span {
+  font-size: 12px;
+  color: #999;
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+
+    </style>
 </head>
 <body>
    

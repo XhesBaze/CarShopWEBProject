@@ -488,7 +488,7 @@ if(!isset($user_id)){
   </script>
   </section>
 
-
+<?php @include 'footer.php'; ?>
 
 <script src="js/script.js"></script>
 

@@ -50,6 +50,7 @@ if (isset($_POST['send'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Contact Us</title>
+    <link rel="icon" type="image/png" href="..\images\car-logo.jpg"/>
     <link rel="stylesheet" href="css/contact.css" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>

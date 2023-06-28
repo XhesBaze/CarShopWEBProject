@@ -1,6 +1,9 @@
 <?php
-@include 'config.php'; // include connection to database
-session_start(); //start session 
+
+// Including the 'config.php' file to establish a database connection and other configurations.
+@include 'config.php'; 
+//starting the session 
+session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -97,11 +100,11 @@ session_start(); //start session
          text-align:center;
          font-family:'Times New Roman', Times, serif;
          color: white;
-         font-size: 1.2vw;
-         margin: 60% 0 0 18%;
-         width:70%;
-         letter-spacing: 5px;
-         line-height: 1.5em;
+         font-size: 1.5vw;
+         margin: 50% 0 0 18%;
+         width:50%;
+         letter-spacing: 12px;
+         line-height: 2.2em;
          margin: 0;
 
       }
@@ -115,7 +118,7 @@ session_start(); //start session
 <section class="home">
 
    <div class="content">
-      <h3>Welcome to OnTheGo!</h3>
+      <h3>Welcome to OnTheGo app!</h3>
       <p>Discover your dream ride at our one-stop destination for all your automotive needs. Our dedicated team is committed to providing exceptional service, 
          ensuring that you find the perfect car that matches your style and exceeds your expectations. Start your journey with us today and experience the thrill 
          of driving in style and luxury!
@@ -147,7 +150,7 @@ session_start(); //start session
 
             <img id="slide-3" src="./images/href3.jpg" />
             <div class="overlay">
-               <h2>We prioritize your satisfaction even after the purchase. Our dedicated service team provides exceptional after-sales service, including routine maintenance, repairs, and access to genuine spare parts. Our skilled technicians ensure that your vehicle remains in optimal condition, and we're always available to address any inquiries or concerns you may have.</h2>
+               <h2>We prioritize your satisfaction even after the purchase.Our dedicated service team provides exceptional after-sales service, including routine maintenance, repairs, and access to genuine spare parts. Our skilled technicians ensure that your vehicle remains in optimal condition, and we're always available to address any inquiries or concerns you may have.</h2>
             </div>
          </div>
 

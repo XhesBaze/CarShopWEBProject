@@ -1,9 +1,10 @@
 <?php
 
 @include 'config.php';
-
+//starting a session 
 session_start();
 
+//retrieving the admin id 
 $admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){

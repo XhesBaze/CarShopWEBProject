@@ -1,9 +1,12 @@
 <?php
 
+
 @include 'config.php';
 
+//starting a session
 session_start();
 
+//getting the user id
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){

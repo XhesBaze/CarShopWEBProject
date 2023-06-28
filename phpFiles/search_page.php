@@ -1,17 +1,24 @@
 <?php
 
+// Including the 'config.php' file to establish a database connection and other configurations.
 @include 'config.php';
 
+//starting a session 
 session_start();
 
+//retrieving the user id 
 $user_id = $_SESSION['user_id'];
 
+//checking if the user id is not set
 if(!isset($user_id)){
+   //redirecting to login in page 
    header('location:login.php');
 }
 
+
 if(isset($_POST['add_to_cart'])){
 
+   //getting the product id, mame price image and quantity from the form.
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
